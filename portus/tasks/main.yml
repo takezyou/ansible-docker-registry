@@ -9,5 +9,5 @@
 
     - name: Execute Docker-Compose
       raw: |
-      cd /root/Portus-compose
-      docker-compose up
+        cd /root/Portus-compose
+        docker-compose up
