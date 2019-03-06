@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: root
+  gather_facts: false
+  roles:
+   - docker
+   - docker-compose
+   - portus

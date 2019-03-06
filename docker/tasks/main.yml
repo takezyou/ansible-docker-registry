@@ -1,0 +1,11 @@
+---
+- name:
+  block:
+    - name: Install Docker
+      raw: curl -sSL get.docker.com | sh
+
+    - name: Enable Docker
+      systemd:
+        name: docker
+        state: restarted
+        enabled: yes
