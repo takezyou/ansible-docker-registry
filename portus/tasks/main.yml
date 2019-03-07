@@ -2,12 +2,12 @@
 - name:
   block:
     - name: Copy Portus-compose
-      file:
-        src: ../../Portus-compse
-        dest: /root/Portus-compose
-        state: directory
+      copy:
+        src: ../Portus-compose
+        dest: /root/
+        directory_mode: yes
 
     - name: Execute Docker-Compose
       raw: |
         cd /root/Portus-compose
-        docker-compose up
+        docker-compose up -d
