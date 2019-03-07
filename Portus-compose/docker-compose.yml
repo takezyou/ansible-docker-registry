@@ -32,6 +32,7 @@ services:
     volumes:
       - ./secrets:/certificates:ro
       - static:/srv/Portus/public
+    restart: always
 
   background:
     image: opensuse/portus:latest
@@ -60,6 +61,7 @@ services:
       - db
     volumes:
       - ./secrets:/certificates:ro
+    restart: always
 
   db:
     image: library/mariadb:10.0.23
@@ -71,6 +73,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD}
     volumes:
       - /var/lib/portus/mariadb:/var/lib/mysql
+    restart: always
 
   registry:
     image: library/registry:2.6
@@ -103,6 +106,7 @@ services:
       - 5001:5001 # required to access debug service
     links:
       - portus:portus
+    restart: always
 
   nginx:
     image: library/nginx:alpine
@@ -116,6 +120,7 @@ services:
     links:
       - registry:registry
       - portus:portus
+    restart: always
 
 volumes:
   static:
