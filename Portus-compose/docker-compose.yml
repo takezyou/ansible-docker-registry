@@ -76,7 +76,7 @@ services:
     restart: always
 
   registry:
-    image: library/registry:latest
+    image: library/registry:2.6
     command: ["/bin/sh", "/etc/docker/registry/init"]
     environment:
       # Authentication
