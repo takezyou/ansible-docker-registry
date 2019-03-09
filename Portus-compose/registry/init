@@ -2,6 +2,6 @@
 
 set -x
 
-cp /secrets/portus.crt /usr/share/ca-certificates/mozilla
+cp /secrets/portus.crt /usr/local/share/ca-certificates
 update-ca-certificates
 registry serve /etc/docker/registry/config.yml
